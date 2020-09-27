@@ -14,21 +14,26 @@ class Solution:
         
         if not root:
             return ans
+
+        else:
         
-        if root.val == sum:
-            ans += 1
+            if root.val == sum:
+                ans = 1
+                
+            ans += self.DepthFirstSearch(root.left,  sum - root.val)
+            ans += self.DepthFirstSearch(root.right, sum - root.val)
             
-        ans += self.DepthFirstSearch(root.left,  sum - root.val)
-        ans += self.DepthFirstSearch(root.right, sum - root.val)
-        
         return ans
     
     def pathSum(self, root: 'TreeNode', sum: 'int') -> 'int':
-        
+        ans = 0
+
         if not root:
-            return 0
+            return ans
         
         else:
-            ans = self.DepthFirstSearch(root, sum) + self.pathSum(root.left, sum) + self.pathSum(root.right, sum)
+            ans += self.DepthFirstSearch(root, sum) 
+            ans += self.pathSum(root.left,  sum) 
+            ans += self.pathSum(root.right, sum)
         
         return ans
