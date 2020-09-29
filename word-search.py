@@ -1,4 +1,4 @@
-# https://leetcode.com/problems/word-search/submissions/
+# https://leetcode.com/problems/word-search/
 
 class Solution:
     def DFS(self,row, col, curr, board, word):
@@ -24,7 +24,7 @@ class Solution:
             for col in range(len(board[0])):
 
                 check = self.DFS(row, col, 0, board, word)
-                
+
                 if check:
                     return True
                     
