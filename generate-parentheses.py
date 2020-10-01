@@ -1,3 +1,5 @@
+# https://leetcode.com/problems/generate-parentheses/
+
 class Solution:
     def generateParenthesis(self, n: int) -> List[str]:
         if n == 0: 
@@ -5,9 +7,9 @@ class Solution:
         
         ans = []
         
-        for c in range(n):
-            for left in self.generateParenthesis(c):
-                for right in self.generateParenthesis(n-1-c):
+        for par in range(n):
+            for left in self.generateParenthesis(par):
+                for right in self.generateParenthesis(n-par-1):
                     seq = '(',left,')', right
                     
                     ans.append(''.join(seq))
