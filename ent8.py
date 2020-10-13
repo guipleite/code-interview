@@ -40,10 +40,10 @@ class Trie:
         node = self.root
 
         for i in range(len(word)):
-            if word[i] not in node.children:
+            if word[i] in node.children:
+                node = node.children[word[i]]
+            else:    
                 return False
-
-            node = node.children[word[i]]
 
         return True
 
