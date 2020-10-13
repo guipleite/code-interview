@@ -86,5 +86,3 @@ def get_valid_t9_words(number, words):
     backtrack()
 
     return ans
-
-print(get_valid_t9_words("233",["add","brg"]))
