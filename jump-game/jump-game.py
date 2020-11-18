@@ -19,6 +19,7 @@ def canJump( nums):
     else:
         return True
         
+        
 L2 = [3,2,1,0,4]
 L = [2,3,1,1,4]
 
